@@ -14,7 +14,7 @@
         android:textColor="@color/black"
         android:gravity="right"
         android:enabled="false"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
