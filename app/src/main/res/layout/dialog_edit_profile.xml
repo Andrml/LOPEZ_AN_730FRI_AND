@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Username EditText -->
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Full Name"
+            android:background="@drawable/bg"
+            android:backgroundTint="@color/purple"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Course EditText -->
+        <EditText
+            android:id="@+id/editTextCourse"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Course"
+            android:background="@drawable/bg"
+            android:backgroundTint="@color/purple"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Contact Number EditText -->
+        <EditText
+            android:id="@+id/editTextContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Contact Number"
+            android:backgroundTint="@color/purple"
+            android:background="@drawable/bg"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Age EditText -->
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="number"
+            android:hint="Age"
+            android:backgroundTint="@color/purple"
+            android:background="@drawable/bg"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Email EditText -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Email"
+            android:backgroundTint="@color/purple"
+            android:background="@drawable/bg"
+            android:paddingLeft="10dp"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="10dp">
+
+           <!-- Gender RadioGroup -->
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Gender: "
+               android:textStyle="bold"
+               android:paddingTop="10dp"
+               android:textSize="15sp"/>
+
+           <RadioGroup
+               android:id="@+id/radioGroupGender"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:paddingTop="5dp"
+               android:layout_marginLeft="20dp">
+
+               <RadioButton
+                   android:id="@+id/radioMale"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Male" />
+
+               <RadioButton
+                   android:id="@+id/radioFemale"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Female" />
+           </RadioGroup>
+
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <!-- Talent Checkboxes -->
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Kpop Idols:"
+               android:textStyle="bold"
+               android:textSize="15sp"
+               android:paddingTop="10dp"
+               />
+
+           <CheckBox
+               android:id="@+id/checkBoxSinging"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Bini"
+               android:layout_marginLeft="3dp"/>
+
+           <CheckBox
+               android:id="@+id/checkBoxDancing"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Twice" />
+
+           <CheckBox
+               android:id="@+id/checkBoxDrawing"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Blackpink" />
+
+           <CheckBox
+               android:id="@+id/checkBoxWriting"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="BTS" />
+
+
+
+       </LinearLayout>
+
+
+        <!-- Save/Cancel Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Lavender"
+                android:background="@drawable/bg"
+                android:text="Save"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/bg"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
