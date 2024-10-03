@@ -28,7 +28,7 @@ public class ActivityFragment extends DialogFragment {
 
 
         dialogTitle.setText("Action Required");
-        dialogMessage.setText("Please confirm your choice to continue.");
+        dialogMessage.setText("Please click to confirm your choice to continue.");
 
 
         positiveButton.setOnClickListener(v -> {
