@@ -109,7 +109,7 @@
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:orientation="horizontal">
+           android:orientation="vertical">
 
            <!-- Talent Checkboxes -->
            <TextView
@@ -121,30 +121,50 @@
                android:paddingTop="10dp"
                />
 
-           <CheckBox
-               android:id="@+id/checkBoxSinging"
-               android:layout_width="wrap_content"
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="Bini"
-               android:layout_marginLeft="3dp"/>
+               android:orientation="horizontal"
+               android:layout_marginLeft="100dp">
 
-           <CheckBox
-               android:id="@+id/checkBoxDancing"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Twice" />
+               <CheckBox
+                   android:id="@+id/checkBoxSinging"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Bini"
+                   android:layout_marginLeft="3dp"/>
 
-           <CheckBox
-               android:id="@+id/checkBoxDrawing"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Blackpink" />
+               <CheckBox
+                   android:id="@+id/checkBoxDancing"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Twice"
+                   android:layout_marginLeft="50dp"/>
 
-           <CheckBox
-               android:id="@+id/checkBoxWriting"
-               android:layout_width="wrap_content"
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="BTS" />
+               android:orientation="horizontal"
+               android:layout_marginLeft="103dp">
+
+               <CheckBox
+                   android:id="@+id/checkBoxDrawing"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Blackpink" />
+
+               <CheckBox
+                   android:id="@+id/checkBoxWriting"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="BTS"
+                   android:layout_marginLeft="15dp"/>
+
+
+
+           </LinearLayout>
 
 
 

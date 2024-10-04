@@ -1,63 +1,54 @@
 package com.lopez.myapplication
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main_screen)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-
-        // Display List_Fragment by default when the app opens
+        // Load default fragment
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, List_Fragment())
                 .commit()
         }
 
+        // Setup Bottom Navigation
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottomNavigation)
 
-        // Set up button click listener to display FragmentCalculator
-        val iconCalculator = findViewById<Button>(R.id.iconCalculator)
-        iconCalculator.setOnClickListener { v: View? ->
-            // Perform the fragment transaction to replace the container with FragmentCalculator
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, Calculator_Fragment())
-                .addToBackStack(null) // Allows back navigation
-                .commit() // Execute the transaction
+// Set default selected item to List Fragment
+        bottomNavigation.selectedItemId = R.id.nav_list
+
+// Load the default fragment
+        loadFragment(List_Fragment())
+
+        bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_calculator -> {
+                    loadFragment(Calculator_Fragment())
+                    true
+                }
+                R.id.nav_list -> {
+                    loadFragment(List_Fragment())
+                    true
+                }
+                R.id.nav_profile -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+                else -> false
+            }
         }
+    }
 
-
-        // Set up button click listener to display FragmentList
-        val iconList = findViewById<Button>(R.id.iconList)
-        iconList.setOnClickListener { v: View? ->
-            // Perform the fragment transaction to replace the container with FragmentList
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, List_Fragment())
-                .addToBackStack(null) // Allows back navigation
-                .commit() // Execute the transaction
-        }
-
-
-        // Set up button click listener to display FragmentProfile
-        val iconProfile = findViewById<Button>(R.id.iconProfile)
-        iconProfile.setOnClickListener { v: View? ->
-            // Perform the fragment transaction to replace the container with FragmentProfile
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ProfileFragment())
-                .addToBackStack(null) // Allows back navigation
-                .commit() // Execute the transaction
-        }
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

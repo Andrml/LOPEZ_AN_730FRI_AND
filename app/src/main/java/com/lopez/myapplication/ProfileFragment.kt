@@ -111,10 +111,10 @@ class ProfileFragment : Fragment() {
         }
 
         val savedTalent = sharedPreferences!!.getString("talent", "")
-        checkBoxSinging.isChecked = savedTalent!!.contains("Singing")
-        checkBoxDancing.isChecked = savedTalent.contains("Dancing")
-        checkBoxDrawing.isChecked = savedTalent.contains("Drawing")
-        checkBoxWriting.isChecked = savedTalent.contains("Writing")
+        checkBoxSinging.isChecked = savedTalent!!.contains("Bini")
+        checkBoxDancing.isChecked = savedTalent.contains("Twice")
+        checkBoxDrawing.isChecked = savedTalent.contains("Blackpink")
+        checkBoxWriting.isChecked = savedTalent.contains("BTS")
 
         // Create and show the AlertDialog
         val dialogBuilder = AlertDialog.Builder(requireContext())
@@ -145,10 +145,10 @@ class ProfileFragment : Fragment() {
             // Get talent selection
             val newTalentList: MutableList<String?> =
                 ArrayList()
-            if (checkBoxSinging.isChecked) newTalentList.add("Singing")
-            if (checkBoxDancing.isChecked) newTalentList.add("Dancing")
-            if (checkBoxDrawing.isChecked) newTalentList.add("Drawing")
-            if (checkBoxWriting.isChecked) newTalentList.add("Writing")
+            if (checkBoxSinging.isChecked) newTalentList.add("Bini")
+            if (checkBoxDancing.isChecked) newTalentList.add("Twice")
+            if (checkBoxDrawing.isChecked) newTalentList.add("Blackpink")
+            if (checkBoxWriting.isChecked) newTalentList.add("BTS")
 
             val newTalent = TextUtils.join(", ", newTalentList)
 
